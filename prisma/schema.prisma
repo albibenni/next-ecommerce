@@ -7,3 +7,14 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Product {
+    id          Int       @id @default(autoincrement())
+    name        String
+    description String
+    price       Decimal
+    image       String
+    category_id Int
+
+    @@index([category_id])
+}
