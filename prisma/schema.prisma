@@ -14,7 +14,4 @@ model Product {
     description String
     price       Decimal
     image       String
-    category_id Int
-
-    @@index([category_id])
 }
