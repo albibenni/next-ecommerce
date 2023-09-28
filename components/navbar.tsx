@@ -7,9 +7,9 @@ export default function NavbarWithCTAButton() {
   return (
     <Navbar fluid rounded>
       <Navbar.Brand href="https://albertobenatti.com">
-        <BenniLogo className="w-64 lg:w-64" alt="Benni Logo" />
+        <BenniLogo className="w-64 lg:w-64" />
         <span className="ml-8 self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Next e-Ncommerce
+          Next e-commerce
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
