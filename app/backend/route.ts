@@ -7,9 +7,25 @@ const prisma = new PrismaClient();
 
 export async function fetchProducts(): Promise<ProductPrimitive[]> {
   "use server";
-  console.log("SERVER: get data from db");
+  console.log("SERVER: get products");
   const res: ProductType[] = await prisma.product.findMany();
   return res.map(toProductPrimitive);
+}
+
+export async function createProduct(
+  product: ProductPrimitive
+): Promise<ProductPrimitive> {
+  "use server";
+  console.log("SERVER: create");
+  const res: ProductType = await prisma.product.create({
+    data: {
+      name: product.name,
+      price: product.price,
+      description: product.description,
+      image: product.image,
+    },
+  });
+  return toProductPrimitive(res);
 }
 
 export async function deleteProduct(id: string) {
