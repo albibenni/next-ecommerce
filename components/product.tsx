@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductPrimitive } from "@/app/page";
+import { ProductPrimitive } from "@/app/types";
 import Image from "next/image";
 
 interface ProductProps {
