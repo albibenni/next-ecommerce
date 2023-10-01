@@ -14,10 +14,10 @@ export const GET = async () => {
   return NextResponse.json(fetchProducts());
 };
 
-export const DELETE = async (id: string) => {
-  console.log("SERVER: get products");
+export const DELETE = async (id: number) => {
+  console.log("SERVER: delete product");
   const res: ProductType = await prisma.product.delete({
-    where: { id: Number(id) },
+    where: { id },
   });
   return NextResponse.json(res);
 };
@@ -25,7 +25,7 @@ export const DELETE = async (id: string) => {
 export const createProduct = async (
   product: ProductPrimitive
 ): Promise<ProductPrimitive> => {
-  console.log("SERVER: create");
+  console.log("SERVER: create product");
   const res: ProductType = await prisma.product.create({
     data: {
       name: product.name,
