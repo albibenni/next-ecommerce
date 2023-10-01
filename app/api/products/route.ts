@@ -19,7 +19,7 @@ export const DELETE = async (req: Request) => {
   if (!id) return NextResponse.json({ error: "Missing id" });
   console.log("SERVER: delete product");
   await prisma.product.delete({
-    where: { id },
+    where: { id: Number(id) },
   });
   return NextResponse.json({ message: `Product with ${id} deleted` });
 };
