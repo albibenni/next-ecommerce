@@ -1,6 +1,5 @@
 "use client";
 
-import { deleteProduct } from "@/app/api/products/route";
 import { ProductPrimitive } from "@/app/types";
 import Image from "next/image";
 
@@ -15,6 +14,11 @@ export default function Product({ product }: ProductProps) {
   };
   console.log(getProducts());
 
+  const deleteProduct = async (id: number) => {
+    return await fetch(`http://localhost:3000/api/products/${id}`, {
+      method: "DELETE",
+    });
+  };
   return (
     <div className="flex flex-col items-center justify-center w-[200] h-[200]">
       <Image src={image} alt={name} width={150} height={150} />

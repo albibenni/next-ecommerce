@@ -16,8 +16,10 @@ export const GET = async () => {
 
 export const DELETE = async (id: string) => {
   console.log("SERVER: get products");
-  const products: ProductType[] = await prisma.product.findMany();
-  return NextResponse.json(products.map(toProductPrimitive));
+  const res: ProductType = await prisma.product.delete({
+    where: { id: Number(id) },
+  });
+  return NextResponse.json(res);
 };
 
 export const createProduct = async (
