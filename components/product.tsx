@@ -1,5 +1,6 @@
 "use client";
 
+import { deleteProduct } from "@/app/backend/route";
 import { ProductPrimitive } from "@/app/types";
 import Image from "next/image";
 
@@ -9,10 +10,6 @@ interface ProductProps {
 
 export default function Product({ product }: ProductProps) {
   const { image, id, name, description, price } = product;
-  const deleteProduct = async () => {
-    await fetch(`/api/delete-product/${id}`);
-    console.log("deleted product"); //! remove
-  };
 
   return (
     <div className="flex flex-col items-center justify-center w-[200] h-[200]">
@@ -20,7 +17,7 @@ export default function Product({ product }: ProductProps) {
       <div>{name}</div>
       <div>{price}</div>
       <div>{description}</div>
-      <button onClick={deleteProduct}>Delete</button>
+      <button onClick={() => deleteProduct(id)}>Delete</button>
     </div>
   );
 }

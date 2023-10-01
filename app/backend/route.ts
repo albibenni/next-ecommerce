@@ -26,8 +26,7 @@ export async function createProduct(
   return toProductPrimitive(res);
 }
 
-export async function deleteProduct(id: string) {
-  console.log("SERVER");
-
-  return NextResponse.json({ data: "server" });
+export async function deleteProduct(id: number): Promise<void> {
+  const res = await prisma.product.delete({ where: { id } });
+  console.log(res);
 }
