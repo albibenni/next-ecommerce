@@ -8,10 +8,10 @@ export const fetchProducts = async (): Promise<ProductPrimitive[]> => {
   const res: ProductType[] = await prisma.product.findMany();
   return res.map(toProductPrimitive);
 };
+
 export const GET = async () => {
   console.log("SERVER: get products");
-  const products: ProductType[] = await prisma.product.findMany();
-  return NextResponse.json(products.map(toProductPrimitive));
+  return NextResponse.json(fetchProducts());
 };
 
 export const DELETE = async (id: string) => {
