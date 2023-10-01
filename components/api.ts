@@ -3,7 +3,10 @@ export const getProducts = async () => {
 };
 
 export const deleteProduct = async (id: number) => {
-  return await fetch(`http://localhost:3000/api/products/${id}`, {
+  await fetch(`http://localhost:3000/api/products/${id}`, {
     method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
 };

@@ -11,15 +11,17 @@ export const fetchProducts = async (): Promise<ProductPrimitive[]> => {
 
 export const GET = async () => {
   console.log("SERVER: get products");
-  return NextResponse.json(fetchProducts());
+  return NextResponse.json(await fetchProducts());
 };
 
-export const DELETE = async (id: number) => {
+export const DELETE = async (req: Request) => {
+  const { id }: Partial<ProductType> = await req.json();
+  if (!id) return NextResponse.json({ error: "Missing id" });
   console.log("SERVER: delete product");
-  const res: ProductType = await prisma.product.delete({
+  await prisma.product.delete({
     where: { id },
   });
-  return NextResponse.json(res);
+  return NextResponse.json({ message: `Product with ${id} deleted` });
 };
 
 export const createProduct = async (
