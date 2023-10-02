@@ -24,19 +24,15 @@ export const DELETE = async (req: Request) => {
   return NextResponse.json({ message: `Product with ${id} deleted` });
 };
 
-export const createProduct = async (
-  product: ProductPrimitive
-): Promise<ProductPrimitive> => {
-  console.log("SERVER: create product");
+export const POST = async (req: Request) => {
+  const { name, price, description, image }: Partial<ProductPrimitive> =
+    await req.json();
+  if (!name || !price)
+    return NextResponse.json({ error: "Missing required field" });
   const res: ProductType = await prisma.product.create({
-    data: {
-      name: product.name,
-      price: product.price,
-      description: product.description,
-      image: product.image,
-    },
+    data: { name, price, description: description ?? "", image: image ?? "" },
   });
-  return toProductPrimitive(res);
+  return NextResponse.json(res);
 };
 
 export const deleteProduct = async (id: number): Promise<void> => {
