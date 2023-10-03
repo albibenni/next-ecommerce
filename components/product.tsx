@@ -24,7 +24,7 @@ export default function Product({ product, onDelete }: ProductProps) {
       <div>{price.toString()}</div>
       <div className="text-center">{description}</div>
       <button
-        className=" border-solid border-2 border-red-500"
+        className=" border-solid rounded p-1 border-2 border-slate-400 bg-slate-200 text-black"
         onClick={handleDelete}
       >
         Delete
