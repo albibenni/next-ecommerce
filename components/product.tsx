@@ -22,8 +22,13 @@ export default function Product({ product, onDelete }: ProductProps) {
       <Image src={image} alt={name} width={150} height={150} />
       <div>{name}</div>
       <div>{price.toString()}</div>
-      <div>{description}</div>
-      <button onClick={handleDelete}>Delete</button>
+      <div className="text-center">{description}</div>
+      <button
+        className=" border-solid border-2 border-red-500"
+        onClick={handleDelete}
+      >
+        Delete
+      </button>
     </div>
   );
 }
