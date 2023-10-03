@@ -3,7 +3,7 @@ import { PrismaClient, Product as ProductType } from "@prisma/client";
 import { NextResponse } from "next/server";
 
 const prisma = new PrismaClient();
-export const fetchProducts = async (): Promise<ProductPrimitive[]> => {
+const fetchProducts = async (): Promise<ProductPrimitive[]> => {
   console.log("SERVER: get products");
   const res: ProductType[] = await prisma.product.findMany();
   return res.map(toProductPrimitive);
