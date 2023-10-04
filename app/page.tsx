@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 items-center justify-between p-24">
+    <main className="min-h-screen grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 items-center justify-between p-24">
       {products.map((product) => (
         <Product key={product.id} product={product} onDelete={onDelete} />
       ))}
