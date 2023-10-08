@@ -5,6 +5,7 @@ import { ProductPrimitive } from "./types";
 // import { fetchProducts } from "./api/products/route";
 import { useEffect, useState } from "react";
 import { Product as ProductType } from "@prisma/client";
+import Hero from "@/components/hero";
 
 export default function Home() {
   // const productMapped: ProductPrimitive[] = await fetchProducts();
@@ -27,10 +28,11 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {products.map((product) => (
         <Product key={product.id} product={product} onDelete={onDelete} />
       ))}
+      <Hero />
     </main>
   );
 }
