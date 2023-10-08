@@ -1,38 +1,20 @@
-"use client";
-
 import Product from "@/components/product";
-import { ProductPrimitive } from "./types";
-// import { fetchProducts } from "./api/products/route";
+import { ProductPrimitive, toProductPrimitive } from "./types";
 import { useEffect, useState } from "react";
-import { Product as ProductType } from "@prisma/client";
+import { PrismaClient, Product as ProductType } from "@prisma/client";
 import Hero from "@/components/hero";
+import Pricing from "@/components/pricing";
+const prisma = new PrismaClient();
 
-export default function Home() {
-  // const productMapped: ProductPrimitive[] = await fetchProducts();
-  const [products, setProducts] = useState<ProductType[]>([]);
-  const fetchProducts = () => {
-    fetch(`http://localhost:3000/api/products/`, {
-      method: "GET",
-    })
-      .then((r) => r.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.log(error));
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  const onDelete = () => {
-    fetchProducts();
-  };
+export default async function Home() {
+  const productMapped: ProductPrimitive[] = (
+    await prisma.product.findMany()
+  ).map(toProductPrimitive);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {products.map((product) => (
-        <Product key={product.id} product={product} onDelete={onDelete} />
-      ))}
       <Hero />
+      <Pricing products={productMapped} />
     </main>
   );
 }

@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { deleteProduct } from "./api";
-import { Product as ProductType } from "@prisma/client";
+import { ProductPrimitive } from "@/app/types";
 
 interface ProductProps {
-  product: ProductType;
+  product: ProductPrimitive;
   onDelete: () => void;
 }
 
