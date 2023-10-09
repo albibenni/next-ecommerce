@@ -18,7 +18,7 @@ export default function Pricing({ products }: ProductProps) {
               Simple, transparent pricing
             </h2>
             <p className="mt-4 text-gray-500 dark:text-gray-400">
-              No Contracts. No surorise fees.
+              No surprise fees.
             </p>
           </div>
         </div>
