@@ -6,7 +6,7 @@ import { ProductPrimitive } from "@/app/types";
 interface ProductProps {
   products: ProductPrimitive[];
 }
-//! TODO: Add delete functionality
+//! TODO: Add delete functionality -- Login
 
 export default function Pricing({ products }: ProductProps) {
   return (
