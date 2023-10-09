@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ProductPrimitive } from "@/app/types";
 import { deleteProduct } from "./api";
 
@@ -21,6 +22,7 @@ export default function Product({ product, onDelete }: ProductProps) {
       <p className="text-lg font-medium text-gray-800 dark:text-gray-100">
         {name}
       </p>
+      <Image src={image} alt={name} width={150} height={150} />
       <h4 className="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">
         ${price}
       </h4>

@@ -25,13 +25,7 @@ export default function Pricing({ products }: ProductProps) {
 
         <div className="grid gap-6 mt-16 -mx-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products?.map((product) => (
-            <Product
-              product={product}
-              key={product.id}
-              onDelete={function (): void {
-                throw new Error("Function not implemented.");
-              }}
-            />
+            <Product product={product} key={product.id} />
           ))}
         </div>
       </div>
