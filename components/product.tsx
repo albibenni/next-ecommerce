@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { deleteProduct } from "./api";
 import { ProductPrimitive } from "@/app/types";
+import { deleteProduct } from "./api";
 
 interface ProductProps {
   product: ProductPrimitive;
@@ -18,17 +17,25 @@ export default function Product({ product, onDelete }: ProductProps) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-[200] h-[200]">
-      <Image src={image} alt={name} width={150} height={150} />
-      <div>{name}</div>
-      <div>{price.toString()}</div>
-      <div className="text-center">{description}</div>
-      <button
-        className=" border-solid rounded p-1 border-2 border-slate-400 bg-slate-200 text-black"
-        onClick={handleDelete}
-      >
-        Delete
-      </button>
+    <div className="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+      <p className="text-lg font-medium text-gray-800 dark:text-gray-100">
+        {name}
+      </p>
+      <h4 className="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">
+        ${price}
+      </h4>
+      <p className="mt-4 text-gray-500 dark:text-gray-300">{description}</p>
+      <div className="flex flex-row gap-1">
+        <button className="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+          Choose plan
+        </button>
+        <button
+          className="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          onClick={handleDelete}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 }
