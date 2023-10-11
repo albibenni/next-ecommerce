@@ -20,8 +20,8 @@ export default function Pricing({ products }: ProductProps) {
             <p className="mt-4 text-gray-500 ">No surprise fees.</p>
           </div>
         </div>
-
-        <div className="grid gap-6 mt-16 -mx-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {/* gap-6 mt-16 -mx-6 */}
+        <div className="grid sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products?.map((product) => (
             <Product product={product} key={product.id} />
           ))}
