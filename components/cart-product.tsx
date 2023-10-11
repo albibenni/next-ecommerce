@@ -6,19 +6,18 @@ import Image from "next/image";
 
 interface CartProductProps {
   product: ProductPrimitive;
-  onDelete: () => void;
 }
 
-export default function CartProduct({ product, onDelete }: CartProductProps) {
+export default function CartProduct({ product }: CartProductProps) {
   const { image, id, name, description, price } = product;
 
   const handleDelete = async () => {
     await deleteProduct(id);
-    onDelete();
+    // onDelete(); !TODO
   };
 
   return (
-    <div className="grid row-span-1 grid-rows-5 gap-0 justify-center text-center px-6 py-4 transition-colors duration-300 transform rounded-lg hover:bg-gray-300 border-2 border-red-500">
+    <div className="grid row-span-1 grid-rows-5 gap-0 justify-center text-center px-6 py-4 transition-colors duration-300 transform rounded-lg hover:bg-gray-300 border-2 border-gray-600">
       <p className="text-lg font-medium text-gray-800 ">{name}</p>
       <Image
         className="mx-auto my-auto"
@@ -27,7 +26,7 @@ export default function CartProduct({ product, onDelete }: CartProductProps) {
         width={150}
         height={150}
       />
-      <h4 className="text-4xl font-semibold text-gray-800 ">${price}</h4>
+      <h4 className="pt-2 text-4xl font-semibold text-gray-800 ">${price}</h4>
       <p className="text-gray-500 ">{description}</p>
       <button
         onClick={handleDelete}
