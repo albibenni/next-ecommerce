@@ -24,7 +24,7 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <a href="https://www.albertobenatti.com" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <BenniLogo width="220" />
+            <BenniLogo width="50" height="50" />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <BenniLogo width="220" />
+              <BenniLogo width="50" height="50" />
             </a>
             <button
               type="button"
@@ -86,7 +86,7 @@ export default function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-500 dark:text-gray-400 hover:bg-gray-50"
                   >
                     {item.name}
                   </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
               <div className="py-6">
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-500 dark:text-gray-400 hover:bg-gray-50"
                 >
                   Log in
                 </a>
