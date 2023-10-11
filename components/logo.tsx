@@ -1,34 +1,17 @@
 export const BenniLogo = (props: any) => (
   <svg
-    // width="308.7612359841165"
-    // height="304.915625"
-    width="526"
-    viewBox="0 0 526 111"
-    // viewBox="0 0 106.00782394174519 104.68749999999999"
-    // class="css-1j8o68f"
-    // version="1.1"
-    // id="svg23"
-    // sodipodi:docname="logo.svg"
-    // xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-    // xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="308.7612359841165"
+    height="304.915625"
+    viewBox="0 0 106.00782394174519 104.68749999999999"
+    class="css-1j8o68f"
+    version="1.1"
+    id="svg23"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
-    // xmlns:svg="http://www.w3.org/2000/svg"
   >
-    {/* <sodipodi:namedview
-      id="namedview25"
-      pagecolor="#ffffff"
-      bordercolor="#000000"
-      borderopacity="0.25"
-      inkscape:showpageshadow="2"
-      inkscape:pageopacity="0.0"
-      inkscape:pagecheckerboard="0"
-      inkscape:deskcolor="#d1d1d1"
-    /> */}
     <defs id="SvgjsDefs2684" />
     <g
       id="SvgjsG2685"
-      //   featurekey="rootContainer"
       transform="matrix(0.9820592540669653,0,0,0.9820592540669653,-0.054560523427421584,0)"
       fill="#ff4a3f"
     >
@@ -67,7 +50,6 @@ export const BenniLogo = (props: any) => (
     </g>
     <g
       id="SvgjsG2686"
-      //   featurekey="nameFeature-0"
       transform="matrix(2.284354285447385,0,0,2.284354285447385,27.980055421585643,-5.609520280720151)"
       fill="#ffffff"
     >
