@@ -16,13 +16,10 @@ export default async function Home() {
       <div className="container px-6 py-8 mx-auto">
         <div className="sm:flex sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">
-              Simple, transparent pricing
-            </h2>
-            <p className="mt-4 text-gray-500 ">No surprise fees.</p>
+            <h2 className="text-3xl font-bold text-gray-800">Admin Panel</h2>
           </div>
         </div>
-        <div className="grid gap-6 mt-16 -mx-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-6 mt-8 -mx-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {productMapped?.map((product) => (
             <CartProduct product={product} key={product.id} />
           ))}
