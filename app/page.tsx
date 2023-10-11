@@ -1,9 +1,7 @@
-import Product from "@/components/product";
-import { ProductPrimitive, toProductPrimitive } from "./types";
-import { useEffect, useState } from "react";
-import { PrismaClient, Product as ProductType } from "@prisma/client";
 import Hero from "@/components/hero";
 import Pricing from "@/components/pricing";
+import { PrismaClient } from "@prisma/client";
+import { ProductPrimitive, toProductPrimitive } from "./types";
 const prisma = new PrismaClient();
 
 export default async function Home() {

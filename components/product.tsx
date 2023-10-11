@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { ProductPrimitive } from "@/app/types";
-import { deleteProduct } from "./api";
 
 interface ProductProps {
   product: ProductPrimitive;
