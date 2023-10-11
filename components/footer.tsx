@@ -1,4 +1,3 @@
-import { redirect } from "next/dist/server/api-utils";
 import { BenniLogo } from "./logo";
 
 export default function Footer() {
@@ -6,7 +5,9 @@ export default function Footer() {
     <footer className="bg-white dark:bg-gray-900">
       <div className="container px-6 py-8 mx-auto">
         <div className="flex flex-row items-center text-center justify-center">
-          <BenniLogo className="pr-2" width="50" height="50" />
+          <a href="https://albertobenatti.com">
+            <BenniLogo className="pr-2" width="50" height="50" onClick />
+          </a>
           <p className="max-w-md mx-auto text-gray-500 dark:text-gray-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>

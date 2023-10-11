@@ -50,7 +50,7 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a
-            href="#"
+            href="/admin"
             className="text-m font-semibold leading-6 text-gray-500 dark:text-gray-400"
           >
             Log in <span aria-hidden="true">&rarr;</span>
@@ -94,7 +94,7 @@ export default function Navbar() {
               </div>
               <div className="py-6">
                 <a
-                  href="#"
+                  href="/admin"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-500 dark:text-gray-400 hover:bg-gray-50"
                 >
                   Log in
