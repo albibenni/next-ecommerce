@@ -9,17 +9,28 @@ const fetchProducts = async (): Promise<ProductPrimitive[]> => {
   return res.map(toProductPrimitive);
 };
 
-export const GET = async () => {
-  console.log("SERVER: get products");
-  return NextResponse.json(await fetchProducts());
-};
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const id = parseInt(searchParams.get("id") ?? "");
+
+  if (id) {
+    const res = await prisma.product.delete({
+      where: {
+        id: id,
+      },
+    });
+    console.log(res);
+  }
+
+  return NextResponse.json({ data: "server" });
+}
 
 export const DELETE = async (req: Request) => {
   const { id }: Partial<ProductType> = await req.json();
   if (!id) return NextResponse.json({ error: "Missing id" });
   console.log("SERVER: delete product");
   await prisma.product.delete({
-    where: { id: Number(id) },
+    where: { id: id },
   });
   return NextResponse.json({ message: `Product with ${id} deleted` });
 };
