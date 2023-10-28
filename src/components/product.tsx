@@ -23,7 +23,7 @@ export default function Product({ product }: ProductProps) {
       <h4 className="text-4xl font-semibold text-gray-800 ">${price}</h4>
       <p className="text-gray-500 ">{description}</p>
       <button className="w-full mt-auto px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-        Add to cart
+        Choose plan
       </button>
     </div>
   );
