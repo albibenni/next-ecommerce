@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductPrimitive } from "@/app/types";
+import { ProductPrimitive } from "@/src/app/types";
 import { deleteProduct } from "./api";
 import Image from "next/image";
 

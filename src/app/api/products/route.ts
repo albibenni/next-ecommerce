@@ -1,4 +1,4 @@
-import { ProductPrimitive, toProductPrimitive } from "@/app/types";
+import { ProductPrimitive, toProductPrimitive } from "@/src/app/types";
 import { PrismaClient, Product as ProductType } from "@prisma/client";
 import { NextResponse } from "next/server";
 

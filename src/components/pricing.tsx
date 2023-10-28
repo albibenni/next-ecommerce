@@ -1,7 +1,7 @@
 "use client";
 
 import Product from "./product";
-import { ProductPrimitive } from "@/app/types";
+import { ProductPrimitive } from "@/src/app/types";
 
 interface ProductProps {
   products: ProductPrimitive[];

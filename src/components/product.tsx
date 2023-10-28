@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ProductPrimitive } from "@/app/types";
+import { ProductPrimitive } from "@/src/app/types";
 
 interface ProductProps {
   product: ProductPrimitive;

@@ -1,5 +1,5 @@
-import Hero from "@/components/hero";
-import Pricing from "@/components/pricing";
+import Hero from "@/src/components/hero";
+import Pricing from "@/src/components/pricing";
 import { PrismaClient } from "@prisma/client";
 import { ProductPrimitive, toProductPrimitive } from "./types";
 const prisma = new PrismaClient();
