@@ -1,5 +1,5 @@
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
+import Footer from "@/app/components/footer";
+import Navbar from "@/app/components/navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
