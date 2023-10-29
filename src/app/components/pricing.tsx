@@ -1,7 +1,7 @@
 "use client";
 
+import { ProductPrimitive } from "../types";
 import Product from "./product";
-import { ProductPrimitive } from "@/src/app/types";
 
 interface ProductProps {
   products: ProductPrimitive[];
@@ -10,7 +10,11 @@ interface ProductProps {
 
 export default function Pricing({ products }: ProductProps) {
   return (
-    <section className="bg-white w-full">
+    <section
+      id="pricing"
+      aria-label="Pricing"
+      className="bg-slate-900 py-20 sm:py-32"
+    >
       <div className="container px-6 py-8 mx-auto">
         <div className="sm:flex sm:items-center sm:justify-between">
           <div>
@@ -20,7 +24,7 @@ export default function Pricing({ products }: ProductProps) {
             <p className="mt-4 text-gray-500 ">No surprise fees.</p>
           </div>
         </div>
-        <div className="grid gap-6 mt-16 -mx-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
           {products?.map((product) => (
             <Product product={product} key={product.id} />
           ))}
