@@ -1,8 +1,8 @@
-import Navbar from "@/src/components/navbar";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import Footer from "@/src/components/footer";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
