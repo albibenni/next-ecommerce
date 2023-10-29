@@ -11,6 +11,7 @@ export const getProducts = async () => {
 async function deleteProduct(id: number) {
   "use server";
   const res = await prisma.product.delete({ where: { id } });
+  //cache revalidation
   revalidatePath("/admin");
 }
 
