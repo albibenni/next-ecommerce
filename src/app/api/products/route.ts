@@ -1,4 +1,4 @@
-import { ProductPrimitive, toProductPrimitive } from "@/src/app/types";
+import { ProductPrimitive, toProductPrimitive } from "@/app/types";
 import { PrismaClient, Product as ProductType } from "@prisma/client";
 import { NextResponse } from "next/server";
 
@@ -9,20 +9,10 @@ const fetchProducts = async (): Promise<ProductPrimitive[]> => {
   return res.map(toProductPrimitive);
 };
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const id = parseInt(searchParams.get("id") ?? "");
+export async function GET() {
+  const products = await prisma.product.findMany();
 
-  if (id) {
-    const res = await prisma.product.delete({
-      where: {
-        id: id,
-      },
-    });
-    console.log(res);
-  }
-
-  return NextResponse.json({ data: "server" });
+  return NextResponse.json({ products });
 }
 
 export const DELETE = async (req: Request) => {
