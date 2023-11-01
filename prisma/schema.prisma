@@ -15,4 +15,5 @@ model Product {
     description String
     price       Decimal
     image       String
+    stripePriceId String
 }
